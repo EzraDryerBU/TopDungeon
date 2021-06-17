@@ -133,3 +133,27 @@ Received Import Request.
 Start importing Assets/Scripts using Guid(e6314e8ca7d98c24da0e0972960c5e49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10e0ea095014c218a01cdf6f759f9cb0') in 0.024746 seconds 
   Import took 0.040633 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 5035.487868 seconds.
+  path: Assets/0x72_16x16DungeonTileset.v4.png
+  artifactKey: Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0x72_16x16DungeonTileset.v4.png using Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f6ff37278700a4dc2f05b4628af31d') in 1.061057 seconds 
+  Import took 1.066433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.015074 seconds.
+  path: Assets/Atlus.png
+  artifactKey: Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Atlus.png using Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60427e329fc4931bbc2eb812deaef0b3') in 0.045347 seconds 
+  Import took 0.053894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.219054 seconds.
+  path: Assets/Artwork/Atlas.png
+  artifactKey: Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Artwork/Atlas.png using Guid(292cfad018b55934a944400876224bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b53775f78481987e5de4e3546e9f04') in 0.023711 seconds 
+  Import took 0.029189 seconds .
+
