@@ -6,6 +6,7 @@ public class Player : MonoBehaviour{
     
     private BoxCollider2D boxCollider;
     private Vector3 moveDelta;
+    private RaycastHit2D hit;
 
     private void Start(){
         boxCollider = GetComponent<BoxCollider2D>();
@@ -29,8 +30,19 @@ public class Player : MonoBehaviour{
         }
 
         //Handle movement
-        transform.Translate(moveDelta * Time.deltaTime);
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), 
+            Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor","Blocking"));
 
+        if (hit.collider == null) {   
+            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+        }
+
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0),
+            Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+
+        if (hit.collider == null){
+            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        }
 
     }
 
