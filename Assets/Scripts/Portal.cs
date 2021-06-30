@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Portal : Collidable {
+
+    public string[] sceneNames;
+
+    protected override void OnCollide(Collider2D coll) {
+
+        if (coll.name == "Player") {
+            //tp the player to new map
+            string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
