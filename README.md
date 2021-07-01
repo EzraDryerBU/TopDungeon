@@ -26,4 +26,24 @@ Has three fields and one method currently
 -Has a Vector3 object with all feilds initialized to zero when the method starts  
 -It thens checks to see if the new position to look at is any different then the current position the camera is looking at on either axis, and gets that difference as a signed number(float).  
 -If the new float is greater than the bound feild in this class then the x field from this method's Vector# object is set to that difference (flip flop for if it is less than the negative of that bound).  
--Finally it modifies the transform.position feild of the camera itself, adding to it the new Vector3 object that has been created and possibly augmented during this method.  
+-Finally it modifies the transform.position feild of the camera itself, adding to it the new Vector3 object that has been created and possibly augmented during this method.
+
+
+## Collidable Class
+-Currently contains a three different fields and two methods. This class is going to be one inhereted from a lot, as it will govern the general outline of what happens when two game objects' Box Colliders collide.  
+
+### Fields
+-A ContactFilter2D object that will be used to check wether anything the player has touched is collidable.  
+-A BoxCollider2D that will hold the Box Collider of the current object this script is asigned to. Called boxCollider  
+-An array of Collider2D objects that will hold any 2D collider objects that the BoxCollider2D of this class has collided with. Called hits  
+
+### Start
+-As a start function it runs once at the begininng of a scene, with the purpose of getting the BoxCollider2D of the game object this script is assigned to and setting it equal to the boxCollider field in this class.  
+
+### Update
+-As an Update function it runs once a frame, and checks to see if something has collided with boxCollider. If some Collider2D object has, it puts it into the hits array.  
+-It thens runs through each object in the array in order. The array is natrually instantiated as having all of its values set to null, so if the given value at a place in the array is null, that run through the loops ends and the next one starts.  
+-If a position in the loop is not null it calles the OnCollide function of this class, sending it the Collider2D object at the current entry in the array. It then cleans up that position in the array for the next frame by setting the Collider2D object there to null.  
+
+### OnCollide
+-This method is a virtual one, and is intended to be overriden by almost all of the objects that inherit from this class. In its current form it simple prints out the name of the object that has been collided with.  
