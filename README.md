@@ -3,8 +3,14 @@ Top-Down dungeon rpg game in unity
 
 
 ## Player Script
-Contains two methods: 
+Contains three fields and two methods
 
+### Fields
+-A BoxCollider2D field that will hold the box collider object of the player this script is assigned to. Called boxCollider.  
+-A Vector3 object that will hold information about where the player wants to move each frame. Called moveDelta.  
+-A RaycastHit2D object that will be used for checking wether or not the projected path of the player will cross or collide with any objects before actually moving the player. Called hit.  
+
+### <ins>Methods:</ins>
 ### Start
 -Currently just initializes a 2D box collider
 
@@ -21,6 +27,7 @@ Has three fields and one method currently
 -A Transform object that keeps track of what the camera is going to look at  
 -Two floats for the horizontal and vertical bounds of the camera's vision  
 
+### <ins>Methods:</ins>
 ### LateUpdate
 -This method runs every frame after most methods that are called each frame have been run.  
 -Has a Vector3 object with all feilds initialized to zero when the method starts  
@@ -30,13 +37,14 @@ Has three fields and one method currently
 
 
 ## Collidable Class
--Currently contains a three different fields and two methods. This class is going to be one inhereted from a lot, as it will govern the general outline of what happens when two game objects' Box Colliders collide.  
+Currently contains a three different fields and two methods. This class is going to be one inhereted from a lot, as it will govern the general outline of what happens when two game objects' Box Colliders collide.  
 
 ### Fields
 -A ContactFilter2D object that will be used to check wether anything the player has touched is collidable.  
 -A BoxCollider2D that will hold the Box Collider of the current object this script is asigned to. Called boxCollider  
 -An array of Collider2D objects that will hold any 2D collider objects that the BoxCollider2D of this class has collided with. Called hits  
 
+### <ins>Methods:</ins>
 ### Start
 -As a start function it runs once at the begininng of a scene, with the purpose of getting the BoxCollider2D of the game object this script is assigned to and setting it equal to the boxCollider field in this class.  
 
@@ -47,3 +55,19 @@ Has three fields and one method currently
 
 ### OnCollide
 -This method is a virtual one, and is intended to be overriden by almost all of the objects that inherit from this class. In its current form it simple prints out the name of the object that has been collided with.  
+
+
+## Collectable Class
+-A sub-calss of collidable, created to track game objects that will be collected by having the player object collide with them. Has sub-classes that will represent different individual collectable objects, or further classes of collectable objects.  
+-Currently this class has one field and two methods.  
+
+### Fields
+-Simple boolean to track whether or not the object this script has been placed on has been collected by the player. Called collected.  
+
+### <ins>Methods:</ins>
+### OnCollide
+-Basic method that checks whether or not the object that collided with the game object this script is assigned to was the player.  
+-If it was, call OnCollect.  
+
+### OnCollect
+-Currently just sets the collected field to true.  
