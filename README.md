@@ -1,5 +1,5 @@
 # TopDungeon
-Top-Down dungeon rpg game in unity
+Top-Down dungeon rpg game in unity. Part of a project to do atleast some coding/programing related stuff everyday. The majority of the documentation here is for the code located in the TopDungeon/Assets/Scripts folder.  
 
 
 ## Player Script
@@ -71,3 +71,18 @@ Currently contains a three different fields and two methods. This class is going
 
 ### OnCollect
 -Currently just sets the collected field to true.  
+
+
+## Chest Class
+A class used to facilitate the different properties of chests in the game. It inherits from Collectable, has two fields and one method.
+
+### Fields
+-A Sprite object that will hold the visual data for what the chest should look like once it has been collected. Called emptyChest.  
+-A simple int that determines how much game currency is in the chest. Called pesosAmount.  
+
+### <ins>Methods:</ins>
+### OnCollect
+-Overrides the virtual OnCollect method of the Collectable class.  
+-Checks if the base field collected is true.  
+-If it isn't sets collected to true, changes the the sprite of the object this script is attached to emptyChest, and prints a message to the debug log.  
+
