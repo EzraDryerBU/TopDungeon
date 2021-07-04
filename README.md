@@ -86,3 +86,15 @@ A class used to facilitate the different properties of chests in the game. It in
 -Checks if the base field collected is true.  
 -If it isn't sets collected to true, changes the the sprite of the object this script is attached to emptyChest, and prints a message to the debug log.  
 
+
+## Portal Class
+A class that will facilitate the transition between different games scenes. Inherits from Collidable. Has one fields and one method.
+
+### Fields
+-An array of strings that holds the different names of scenes. Called sceneNames.  
+
+### <ins>Methods:</ins>
+### OnCollide
+-Overrides the virtual method of the Collidable class OnCollide.  
+-Checks if the Collider2D object given to it belongs to the player.  
+-If it does, declares a new string called sceneName and sets it equal to some random string from the sceneNames array.  
