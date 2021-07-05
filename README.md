@@ -3,7 +3,7 @@ Top-Down dungeon rpg game in unity. Part of a project to do atleast some coding/
 
 
 ## Player Script
-Contains three fields and two methods
+Contains three fields and two methods. Governs player movment and collisions.  
 
 ### Fields
 -A BoxCollider2D field that will hold the box collider object of the player this script is assigned to. Called boxCollider.  
@@ -21,11 +21,11 @@ Contains three fields and two methods
 
 
 ## CameraMotor Script
-Has three fields and one method currently
+Has three fields and one method currently. Governs camera movement.  
 
 ### Fields
--A Transform object that keeps track of what the camera is going to look at  
--Two floats for the horizontal and vertical bounds of the camera's vision  
+-A Transform object that keeps track of what the camera is going to look at. Called lookAt.  
+-Two floats for the horizontal and vertical bounds of the camera's vision. Called boundX and boundY.  
 
 ### <ins>Methods:</ins>
 ### LateUpdate
