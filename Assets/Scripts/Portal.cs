@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : Collidable {
 
@@ -11,7 +12,7 @@ public class Portal : Collidable {
         if (coll.name == "Player") {
             //tp the player to new map
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
-
+            SceneManager.LoadScene(sceneName);
         }
 
     }
