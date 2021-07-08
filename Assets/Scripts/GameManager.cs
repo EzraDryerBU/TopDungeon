@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     private void Awake() {
+
+        if(GameManager.instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
+        SceneManager.sceneLoaded += LoadState;
+        DontDestroyOnLoad(gameObject);
     }
 
     //Resources
@@ -40,7 +49,8 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetString("SaveSate", s);
     }
 
-    public void LoadState() {
+    public void LoadState(Scene s, LoadSceneMode mode) {
+
         if (!PlayerPrefs.HasKey("SaveState")) return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
