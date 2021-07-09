@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour {
         s += "0";
 
         PlayerPrefs.SetString("SaveSate", s);
+        Debug.Log("Save State");
     }
 
     public void LoadState(Scene s, LoadSceneMode mode) {
